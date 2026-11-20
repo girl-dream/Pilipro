@@ -98,6 +98,13 @@ List<SettingsModel> get replySettings => [
     },
   ),
   SwitchModel(
+    title: '评论区过滤中国大陆以外IP地址',
+    leading: const Icon(Icons.location_off_outlined),
+    setKey: SettingBoxKey.filterLocationOutOfChineseMainland,
+    defaultVal: false,
+    onChanged: (value) => ReplyGrpc.filterLocationOutOfChineseMainland = value,
+  ),
+  SwitchModel(
     title: '评论区搜索关键词',
     subtitle: '展示评论区搜索关键词',
     leading: const Icon(Icons.search_outlined),

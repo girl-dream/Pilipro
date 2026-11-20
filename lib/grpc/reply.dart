@@ -6,6 +6,7 @@ import 'package:PiliBro/grpc/url.dart';
 import 'package:PiliBro/http/loading_state.dart';
 import 'package:PiliBro/utils/global_data.dart';
 import 'package:PiliBro/utils/storage_pref.dart';
+import 'package:PiliBro/utils/utils.dart';
 import 'package:fixnum/fixnum.dart';
 
 abstract final class ReplyGrpc {
@@ -17,6 +18,8 @@ abstract final class ReplyGrpc {
     caseSensitive: false,
   );
   static bool enableFilter = replyRegExp.pattern.isNotEmpty;
+  static bool filterLocationOutOfChineseMainland =
+      Pref.filterLocationOutOfChineseMainland;
 
   // static Future replyInfo({required int rpid}) {
   //   return _request(
@@ -96,12 +99,21 @@ abstract final class ReplyGrpc {
         reply.content.atNameToMid.length >= blockReplyAtCount!;
   }
 
+  /// 过滤属地在中国大陆以外的评论
+  static bool _isLocationOutOfChineseMainland(ReplyInfo reply) {
+    if (!filterLocationOutOfChineseMainland) return false;
+    final replyControl = reply.replyControl;
+    if (!replyControl.hasLocation()) return false;
+    return !Utils.isChineseMainlandLocation(replyControl.location);
+  }
+
   static bool needRemoveGrpc(ReplyInfo reply) {
     return GlobalData().blackMids.contains(reply.mid.toInt()) ||
         _blockReplyAtCount(reply) ||
         _blockAtOnlyReply(reply) ||
         (antiGoodsReply && _needRemoveGoodGrpc(reply)) ||
-        (enableFilter && replyRegExp.hasMatch(reply.content.message));
+        (enableFilter && replyRegExp.hasMatch(reply.content.message)) ||
+        _isLocationOutOfChineseMainland(reply);
   }
 
   static Future<LoadingState<MainListReply>> mainList({

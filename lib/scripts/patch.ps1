@@ -298,7 +298,8 @@ switch ($platform.ToLower()) {
 
 $CupertinoUiDir = Get-ChildItem "$PubCacheDir/hosted/pub.dev" -Directory |
     Where-Object { $_.Name -like "cupertino_ui-*" } |
-    Select-Object -Last 1
+    Sort-Object LastWriteTime -Descending |
+    Select-Object -First 1
 
 if (-not $CupertinoUiDir) {
     throw "cupertino_ui package not found in pub cache"

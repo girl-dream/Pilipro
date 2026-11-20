@@ -308,7 +308,8 @@ abstract final class SettingBoxKey {
       buvid = 'buvid',
       blockAtOnlyReply = 'blockAtOnlyReply',
       blockReplyAtCount = 'blockReplyAtCount',
-      filterIntro = 'filterIntro';
+      filterIntro = 'filterIntro',
+      filterLocationOutOfChineseMainland = 'filterLocationOutOfChineseMainland';
 
   static const String superChatType = 'superChatType',
       enableFullScreenSC = 'enableFullScreenSC',

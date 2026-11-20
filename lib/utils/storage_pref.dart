@@ -1882,4 +1882,8 @@ abstract final class Pref {
 
   static bool get filterIntro =>
       _setting.get(SettingBoxKey.filterIntro, defaultValue: false);
+
+  static bool get filterLocationOutOfChineseMainland =>
+      _setting.get(SettingBoxKey.filterLocationOutOfChineseMainland,
+          defaultValue: false);
 }
