@@ -1,0 +1,69 @@
+  name: 构建 iOS
+
+  on:
+    workflow_dispatch:
+      inputs:
+        build_number:
+          description: "Build number；0 = 自动"
+          required: false
+          default: "0"
+          type: string
+
+  permissions:
+    contents: read
+
+  jobs:
+    ios:
+      name: iOS
+      runs-on: macos-26
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v7
+          with:
+            fetch-depth: 0
+
+        - name: Setup Flutter
+          uses: subosito/flutter-action@v2
+          with:
+            channel: stable
+            flutter-version-file: pubspec.yaml
+            cache: true
+
+        - name: Set and Extract version
+          shell: pwsh
+          env:
+            BUILD_NUMBER_OVERRIDE: ${{ inputs.build_number }}
+            RELEASE_TAG_OVERRIDE: ""
+          run: lib/scripts/build.ps1
+
+        - name: Apply Patch
+          shell: pwsh
+          run: lib/scripts/patch.ps1 iOS
+
+        - name: Build iOS
+          shell: bash
+          run: |
+            flutter build ios --release --no-codesign --dart-define-from-file=pili_release.json --no-pub || true
+            # 如果 flutter build 因签名检查失败，继续走 Xcode 构建
+            cd ios
+            xcodebuild -workspace Runner.xcworkspace \
+              -scheme Runner \
+              -configuration Release \
+              -sdk iphoneos \
+              -derivedDataPath ../build/ios \
+              CODE_SIGNING_ALLOWED=NO \
+              CODE_SIGNING_REQUIRED=NO \
+              CODE_SIGN_IDENTITY="" \
+              build
+            cd ..
+            ln -sf ./build/ios/Build/Products/Release-iphoneos Payload
+            find Payload/Runner.app/Frameworks -type d -name "*.framework" -exec codesign --force --sign - --preserve-metadata=identifier,entitlements {} \;
+            zip -r9 "PiliBro_ios_${{ env.version }}.ipa" Payload/Runner.app
+
+        - name: Upload iOS
+          uses: actions/upload-artifact@v7
+          with:
+            name: release-ios
+            path: PiliBro_ios_*.ipa
+            if-no-files-found: error
+            retention-days: 7
