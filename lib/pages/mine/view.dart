@@ -738,6 +738,9 @@ class _MediaPageState extends CommonPageState<MinePage>
           controller: controller,
           autofocus: true,
           keyboardType: TextInputType.url,
+          decoration: const InputDecoration(
+            hintText: 'https://',
+          ),
           onSubmitted: (value) => Get.back(result: value.trim()),
         ),
         actions: [
