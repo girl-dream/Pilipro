@@ -46,7 +46,7 @@ final class TrafficStatsService with WidgetsBindingObserver {
   final ValueNotifier<WindowsTrafficLive?> windowsLive = ValueNotifier(null);
 
   static const _windowsChannel = MethodChannel(
-    'org.brotech.pilibro/network_traffic',
+    'org.shubaobao.pilibro/network_traffic',
   );
 
   Future<void> initialize() {

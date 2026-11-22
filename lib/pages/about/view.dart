@@ -127,14 +127,8 @@ class _AboutPageState extends State<AboutPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '使用Flutter开发的多功能娱乐、工具、网络三合一客户端',
+                  '使用Flutter开发的客户端',
                   style: TextStyle(color: outline),
-                  semanticsLabel: '与你一起，发现不一样的世界',
-                ),
-                const Icon(
-                  Icons.accessibility_new,
-                  semanticLabel: "无障碍适配",
-                  size: 18,
                 ),
               ],
             ),
@@ -158,10 +152,6 @@ Commit Hash: ${BuildConfig.commitHash}''',
               style: const TextStyle(fontSize: 14),
             ),
             leading: const Icon(Icons.info_outline),
-            onLongPress: () => Utils.copyText(BuildConfig.commitHash),
-            onSecondaryTap: PlatformUtils.isMobile
-                ? null
-                : () => Utils.copyText(BuildConfig.commitHash),
           ),
           Divider(
             thickness: 1,

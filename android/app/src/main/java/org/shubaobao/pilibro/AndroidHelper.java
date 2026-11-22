@@ -1,6 +1,6 @@
-package org.BroTech.gege.pilibro;
+package org.shubaobao.pilibro;
 
-import static org.BroTech.gege.pilibro.MediaHelper.getRemoteAction;
+import static org.shubaobao.pilibro.MediaHelper.getRemoteAction;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.BroTech.gege.pilibro;
+package org.shubaobao.pilibro;
 
 import android.app.PendingIntent;
 import android.app.RemoteAction;

@@ -11,7 +11,7 @@ import UIKit
 /// tracked texture are copied and fed to an `AVSampleBufferDisplayLayer`, which
 /// is used as the PiP content source (iOS 15+).
 final class PipPlugin: NSObject, FlutterPlugin {
-  private static let channelName = "com.example.pilibro/pip"
+  private static let channelName = "org.shubaobao.pilibro/pip"
 
   static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(
@@ -152,7 +152,7 @@ private final class PipSession: NSObject {
   private var hasFrame = false
 
   // Accessed on `frameQueue` only.
-  private let frameQueue = DispatchQueue(label: "com.example.pilibro.pip.frame")
+  private let frameQueue = DispatchQueue(label: "org.shubaobao.pilibro.pip.frame")
   private let ciContext = CIContext(options: [
     .workingColorSpace: NSNull(),
     .outputColorSpace: NSNull(),

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.BroTech.gege.pilibro">
+    package="org.shubaobao.pilibro">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
@@ -121,7 +121,7 @@
             <intent-filter android:label="PiliBro">
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.SEARCH" />
-                <action android:name="org.BroTech.gege.pilibro.SHORTCUT" />
+                <action android:name="org.shubaobao.pilibro.SHORTCUT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />

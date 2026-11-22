@@ -2,10 +2,10 @@
 Type=Application
 Name=PiliBro
 Comment=Multifunctional all-in-one client for entertainment, tools and networking, developed in Flutter
-Comment[zh_CN]=使用Flutter开发的多功能娱乐、工具、网络三合一客户端
+Comment[zh_CN]=使用Flutter开发的客户端
 Exec=pilibro %u
 Icon=pilibro
 Terminal=false
-StartupWMClass=org.BroTech.gege.pilibro
+StartupWMClass=org.shubaobao.pilibro
 Categories=Video;AudioVideo;Player;
 MimeType=x-scheme-handler/bilibili;

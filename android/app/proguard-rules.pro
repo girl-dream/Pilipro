@@ -1,2 +1,2 @@
--keep class org.BroTech.gege.pilibro.AndroidHelper { public *; }
--keep class org.BroTech.gege.pilibro.AndroidHelper$ToDart { public *; }
+-keep class org.shubaobao.pilibro.AndroidHelper { public *; }
+-keep class org.shubaobao.pilibro.AndroidHelper$ToDart { public *; }

@@ -185,7 +185,7 @@ final class $Runnable$Type$ extends jni$_.JType<Runnable> {
   String get signature => r'Ljava/lang/Runnable;';
 }
 
-/// from: `org.BroTech.gege.pilibro.AndroidHelper`
+/// from: `org.shubaobao.pilibro.AndroidHelper`
 extension type AndroidHelper._(jni$_.JObject _$this) implements jni$_.JObject {
   static final _class = jni$_.JClass.forName(
     r'org/BroTech/gege/pilibro/AndroidHelper',
@@ -934,7 +934,7 @@ final class $AndroidHelper$Type$ extends jni$_.JType<AndroidHelper> {
   String get signature => r'Lorg/BroTech/gege/pilibro/AndroidHelper;';
 }
 
-/// from: `org.BroTech.gege.pilibro.AndroidHelper$ToDart`
+/// from: `org.shubaobao.pilibro.AndroidHelper$ToDart`
 extension type AndroidHelper$ToDart._(jni$_.JObject _$this)
     implements jni$_.JObject {
   static final _class = jni$_.JClass.forName(

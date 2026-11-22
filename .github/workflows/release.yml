@@ -328,7 +328,7 @@ jobs:
           mkdir -p opt/PiliBro usr/share/applications usr/share/icons/hicolor/512x512/apps
           cp -r ../build/linux/x64/release/bundle/* opt/PiliBro
           cp -r ../assets/linux/DEBIAN .
-          cp ../assets/linux/org.BroTech.gege.pilibro.desktop usr/share/applications
+          cp ../assets/linux/org.shubaobao.pilibro.desktop usr/share/applications
           cp ../assets/linux/pilibro.png usr/share/icons/hicolor/512x512/apps/pilibro.png
           sed -i "2s/version_need_change/${{ env.version }}/g" DEBIAN/control
           SIZE_KB=$(du -s -b --apparent-size . | awk '{print int($1)}')
@@ -352,7 +352,7 @@ jobs:
           SRC_DIR="$PWD/pilibro-${{ env.version }}"
           mkdir -p "$SRC_DIR/bundle" "$SRC_DIR/assets"
           cp -r build/linux/x64/release/bundle/* "$SRC_DIR/bundle/"
-          cp assets/linux/org.BroTech.gege.pilibro.desktop "$SRC_DIR/assets/org.BroTech.gege.pilibro.desktop"
+          cp assets/linux/org.shubaobao.pilibro.desktop "$SRC_DIR/assets/org.shubaobao.pilibro.desktop"
           cp assets/linux/pilibro.png "$SRC_DIR/assets/pilibro.png"
           tar -zcvf "$RPM_BUILD_ROOT/SOURCES/pilibro-${{ env.version }}.tar.gz" -C "$PWD" "pilibro-${{ env.version }}"
           cat > "$RPM_BUILD_ROOT/SPECS/pilibro.spec" <<SPEC_EOF
@@ -379,7 +379,7 @@ jobs:
           mkdir -p %{buildroot}/usr/bin
           ln -sf /opt/PiliBro/pilibro %{buildroot}/usr/bin/pilibro
           mkdir -p %{buildroot}/usr/share/applications
-          install -m 644 assets/org.BroTech.gege.pilibro.desktop %{buildroot}/usr/share/applications/org.BroTech.gege.pilibro.desktop
+          install -m 644 assets/org.shubaobao.pilibro.desktop %{buildroot}/usr/share/applications/org.shubaobao.pilibro.desktop
           mkdir -p %{buildroot}/usr/share/icons/hicolor/512x512/apps
           install -m 644 assets/pilibro.png %{buildroot}/usr/share/icons/hicolor/512x512/apps/pilibro.png
 
@@ -394,7 +394,7 @@ jobs:
           %files
           /opt/PiliBro
           /usr/bin/pilibro
-          /usr/share/applications/org.BroTech.gege.pilibro.desktop
+          /usr/share/applications/org.shubaobao.pilibro.desktop
           /usr/share/icons/hicolor/512x512/apps/pilibro.png
 
           %changelog
@@ -413,9 +413,9 @@ jobs:
           APPDIR="PiliBro.AppDir"
           mkdir -p "$APPDIR/usr/bin" "$APPDIR/usr/lib" "$APPDIR/usr/share/applications" "$APPDIR/usr/share/metainfo" "$APPDIR/usr/share/icons/hicolor/512x512/apps"
           cp -r build/linux/x64/release/bundle/* "$APPDIR/usr/bin/"
-          cp assets/linux/org.BroTech.gege.pilibro.desktop "$APPDIR/org.brotech.gege.pilibro.desktop"
-          cp assets/linux/org.BroTech.gege.pilibro.desktop "$APPDIR/usr/share/applications/org.brotech.gege.pilibro.desktop"
-          cp assets/linux/org.brotech.gege.pilibro.appdata.xml "$APPDIR/usr/share/metainfo/org.brotech.gege.pilibro.appdata.xml"
+          cp assets/linux/org.shubaobao.pilibro.desktop "$APPDIR/org.shubaobao.pilibro.desktop"
+          cp assets/linux/org.shubaobao.pilibro.desktop "$APPDIR/usr/share/applications/org.shubaobao.pilibro.desktop"
+          cp assets/linux/org.shubaobao.pilibro.appdata.xml "$APPDIR/usr/share/metainfo/org.shubaobao.pilibro.appdata.xml"
           cp assets/linux/pilibro.png "$APPDIR/pilibro.png"
           cp assets/linux/pilibro.png "$APPDIR/usr/share/icons/hicolor/512x512/apps/pilibro.png"
           cat > "$APPDIR/AppRun" <<'APPRUN_EOF'

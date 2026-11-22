@@ -138,7 +138,7 @@ val desktopIconResourcesTask = tasks.register<GenerateDesktopIconResources>(
 }
 
 android {
-    namespace = "org.BroTech.gege.pilibro"
+    namespace = "org.shubaobao.pilibro"
     compileSdk = 37
     ndkVersion = flutter.ndkVersion
 
@@ -148,7 +148,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "org.BroTech.gege.pilibro"
+        applicationId = "org.shubaobao.pilibro"
         minSdk = flutter.minSdkVersion
         targetSdk = 37
         versionCode = flutter.versionCode

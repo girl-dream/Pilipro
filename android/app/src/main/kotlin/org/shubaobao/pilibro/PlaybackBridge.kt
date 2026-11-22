@@ -1,4 +1,4 @@
-package org.BroTech.gege.pilibro
+package org.shubaobao.pilibro
 
 import android.content.BroadcastReceiver
 import android.content.Context

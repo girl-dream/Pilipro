@@ -30,7 +30,7 @@ import 'package:path/path.dart' as path;
 Future<VideoPlayerServiceHandler> initAudioService() {
   if (Platform.isLinux) {
     AudioServiceMpris.init(
-      dBusName: 'org.BroTech.gege.pilibro.audio',
+      dBusName: r'org.shubaobao.pilibro.audio',
       identity: 'Audio Service ${Constants.appName}',
       canGoNext: true,
       canGoPrevious: true,
@@ -42,7 +42,7 @@ Future<VideoPlayerServiceHandler> initAudioService() {
   return AudioService.init(
     builder: VideoPlayerServiceHandler.new,
     config: const AudioServiceConfig(
-      androidNotificationChannelId: 'org.BroTech.gege.pilibro.audio',
+      androidNotificationChannelId: r'org.shubaobao.pilibro.audio',
       androidNotificationChannelName: 'Audio Service ${Constants.appName}',
       androidNotificationOngoing: true,
       androidStopForegroundOnPause: true,
