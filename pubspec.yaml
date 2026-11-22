@@ -283,9 +283,7 @@ flutter:
     - path: assets/images/
     - path: assets/images/logo/
     - path: assets/images/logo/ico/
-      platforms: [windows]
-    - path: assets/images/logo/desktop/
-      platforms: [linux, macos]
+      platforms: [linux, macos , windows]
     - path: assets/images/live/
     - path: assets/images/paycoins/
     - path: assets/shaders/

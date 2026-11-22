@@ -104,7 +104,7 @@ class _BroTechPageState extends State<BroTechPage> {
   }
 
   void _onHostSubmitted(String value) {
-    if (value.trim() != '哥哥科技') return;
+    if (value.trim() != r'pilipro') return;
     GStorage.localCache.put(_consentKey, _unlockMatch);
     _host.clear();
     SmartDialog.showToast('已解锁账号密码');

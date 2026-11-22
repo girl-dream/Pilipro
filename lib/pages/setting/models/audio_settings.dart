@@ -143,7 +143,7 @@ class AudioSettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final settings = audioSettings;
     return SimpleScaffold(
-      appBar: AppBar(title: const Text('特色播放~ 哥哥的播放器工具箱')),
+      appBar: AppBar(title: const Text(r'特色播放~ pilipro的播放器工具箱')),
       body: ListView.builder(
         padding: EdgeInsets.only(
           bottom: MediaQuery.viewPaddingOf(context).bottom + 100,

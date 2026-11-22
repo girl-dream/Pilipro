@@ -1005,14 +1005,13 @@ class _OrientationSettingsPageState extends State<OrientationSettingsPage> {
   }
 
   List<Widget> _brotherSettings() => [
-    _section('哥哥科技模式'),
+    _section(r'Pilipro技模式'),
     const Padding(
       padding: EdgeInsets.fromLTRB(16, 0, 16, 8),
       child: Text(
         '三个父子周期由上到下依次是：APP 普通页面、视频非全屏、视频全屏，共用同一套选项：'
         '进入时的方向、从下级返回时的方向、运行期间的旋转方式。'
         '系统无法原生实现的组合也按您的选择执行，不会被自动改写。'
-        '架构设定：哥哥科技，底层&数学：Chat模式GPT6，文案定版：Opus姐姐。',
       ),
     ),
     _selectTile(

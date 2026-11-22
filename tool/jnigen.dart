@@ -1,6 +1,6 @@
 import 'dart:io' show Platform;
 
-import 'package:jnigen/jnigen.dart';
+import r'package:jnigen/jnigen.dart';
 
 void main(List<String> args) async {
   final packageRoot = Platform.script.resolve('../');
@@ -8,7 +8,7 @@ void main(List<String> args) async {
     input: Input(
       sourcePath: [packageRoot.resolve('android/app/src/main/java')],
       classes: [
-        'org.BroTech.gege.pilibro.AndroidHelper',
+        r'org.shubaobao.pilibro.AndroidHelper',
         'java.lang.Runnable',
       ],
       androidSdk: AndroidSdk(

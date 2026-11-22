@@ -113,11 +113,6 @@ class _WhisperPageState extends State<WhisperPage> {
                       16 + padding.right,
                       4,
                     ),
-                    leading: const CircleAvatar(
-                      backgroundImage: AssetImage(
-                        CommentHelperService.avatarAsset,
-                      ),
-                    ),
                     title: const Text(CommentHelperService.name),
                     subtitle: Text(
                       '检测到评论不可见：${latest['message'] ?? ''}',

@@ -46,7 +46,7 @@ final class BrotherDiagnosticsSnapshot {
   final List<String> triggerNotes;
 }
 
-/// 从编译好的哥哥科技方案推算各场景会启用哪些监听，只读方案，不碰运行状态
+/// 从编译好的方案推算各场景会启用哪些监听，只读方案，不碰运行状态
 abstract final class BrotherDiagnosticsCompiler {
   static bool get _supportsProposedRotation =>
       Platform.isAndroid && DeviceUtils.sdkInt >= 34;

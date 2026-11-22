@@ -1,5 +1,5 @@
 abstract final class BuildConfig {
-  static const editionName = '哥哥科技';
+  static const editionName = r'Pilipro';
   static const int versionCode = int.fromEnvironment(
     'pili.code',
     defaultValue: 1,

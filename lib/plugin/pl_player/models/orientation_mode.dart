@@ -1,7 +1,7 @@
 enum OrientationPolicyMode {
   simple('简单配置'),
   advanced('高级配置'),
-  brotherTech('哥哥科技模式');
+  brotherTech(r'Pilipro模式');
 
   final String desc;
   const OrientationPolicyMode(this.desc);

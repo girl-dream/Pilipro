@@ -1,10 +1,10 @@
 import 'package:PiliBro/utils/storage.dart';
 import 'package:flutter/foundation.dart';
 
+//todo
 abstract final class CommentHelperService {
   static const uid = 0;
-  static const name = '哥哥科技小助手';
-  static const avatarAsset = 'assets/images/brotech_comment_helper.jpg';
+  static const name = 'Pilipro小助手';
 
   static final ValueNotifier<int> revision = ValueNotifier(0);
 

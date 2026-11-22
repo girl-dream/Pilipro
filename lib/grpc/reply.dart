@@ -6,7 +6,6 @@ import 'package:PiliBro/grpc/url.dart';
 import 'package:PiliBro/http/loading_state.dart';
 import 'package:PiliBro/utils/global_data.dart';
 import 'package:PiliBro/utils/storage_pref.dart';
-import 'package:PiliBro/utils/utils.dart';
 import 'package:fixnum/fixnum.dart';
 
 abstract final class ReplyGrpc {
@@ -29,6 +28,23 @@ abstract final class ReplyGrpc {
   //     onSuccess: (response) => response.reply,
   //   );
   // }
+
+  static final Set<String> ChineseMainlandProvinces = {
+    '北京', '天津', '上海', '重庆',
+    '河北', '山西', '辽宁', '吉林', '黑龙江',
+    '江苏', '浙江', '安徽', '福建', '江西', '山东',
+    '河南', '湖北', '湖南', '广东', '海南',
+    '四川', '贵州', '云南', '陕西', '甘肃', '青海',
+    '内蒙古', '广西', '西藏', '宁夏', '新疆'
+  };
+
+  /// 判断一条评论的 IP 属地是否属于中国大陆省份
+  /// 空属地视为未知，交由调用方决定是否过滤
+  static bool isChineseMainlandLocation(String location) {
+    final ip = location.length > 5 ? location.substring(5) : location;
+    if (ip.isEmpty) return false;
+    return ChineseMainlandProvinces.contains(ip);
+  }
 
   static bool _hasGoods(Url url) =>
       url.hasExtra() &&
@@ -104,7 +120,7 @@ abstract final class ReplyGrpc {
     if (!filterLocationOutOfChineseMainland) return false;
     final replyControl = reply.replyControl;
     if (!replyControl.hasLocation()) return false;
-    return !Utils.isChineseMainlandLocation(replyControl.location);
+    return !isChineseMainlandLocation(replyControl.location);
   }
 
   static bool needRemoveGrpc(ReplyInfo reply) {

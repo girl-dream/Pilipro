@@ -161,6 +161,7 @@ class _MediaPageState extends CommonPageState<MinePage>
     final buttons = <Widget>[
       if (shown(SettingBoxKey.mineBtnOneKeyListen))
         oneKeyListenAction(color: primary),
+      if (shown(SettingBoxKey.mineBtnPlaybackRate))
       _actionButton(
         icon: Icon(Icons.speed_outlined, color: primary),
         title: '倍速设置',
@@ -738,9 +739,6 @@ class _MediaPageState extends CommonPageState<MinePage>
           controller: controller,
           autofocus: true,
           keyboardType: TextInputType.url,
-          decoration: const InputDecoration(
-            hintText: 'https://',
-          ),
           onSubmitted: (value) => Get.back(result: value.trim()),
         ),
         actions: [

@@ -981,11 +981,12 @@ Widget _themeTrailing(ThemeData theme) {
   );
 }
 
-// 我的页上能藏的按钮；倍速设置、网关管理常驻，不在这里
+// 外观设置可以隐藏的选项
 const _mineButtons = {
   SettingBoxKey.mineBtnHistory: '观看记录',
   SettingBoxKey.mineBtnSub: '我的订阅',
   SettingBoxKey.mineBtnOneKeyListen: '一键听歌',
+  SettingBoxKey.mineBtnPlaybackRate: '倍速设置',
   SettingBoxKey.mineBtnLater: '稍后再看',
   SettingBoxKey.mineBtnAvSettings: '音画设置',
   SettingBoxKey.mineBtnNetworkPolicy: '智能网优',

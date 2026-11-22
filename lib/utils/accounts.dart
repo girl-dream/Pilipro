@@ -104,12 +104,12 @@ abstract final class Accounts {
     x = false;
     if (mids.length == 1) {
       final uid = mids.single;
-      List<int> bytes = utf8.encode('哥哥科技$uid$uid' 'BroTech$uid');
+      List<int> bytes = utf8.encode('pilipro$uid$uid' 'BroTech$uid');
       for (var round = 0; round < 6; round++) {
-        bytes = sha512.convert([...bytes, ...utf8.encode('|$round|BroTech')]).bytes;
+        bytes = sha512.convert([...bytes, ...utf8.encode('|$round|')]).bytes;
         bytes = sha256.convert(bytes.reversed.toList(growable: false)).bytes;
         bytes = md5.convert([...bytes, round]).bytes;
-        bytes = sha1.convert([...bytes, ...utf8.encode('哥哥科技')]).bytes;
+        bytes = sha1.convert([...bytes, ...utf8.encode(r'pilipro')]).bytes;
       }
       x = const {'4278e692', '4452302b'}
           .contains(sha256.convert(bytes).toString().substring(0, 8));

@@ -35,12 +35,6 @@ class CommentHelperPage extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                const CircleAvatar(
-                                  radius: 18,
-                                  backgroundImage: AssetImage(
-                                    CommentHelperService.avatarAsset,
-                                  ),
-                                ),
                                 const SizedBox(width: 10),
                                 const Expanded(
                                   child: Text(

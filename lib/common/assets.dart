@@ -5,12 +5,12 @@ abstract final class Assets {
   static const logo2 = 'assets/images/logo/logo_2.png';
   // 透明底的单色图标，拿来染色用；logo_2.png 现在是不透明的应用图标，染色会变成实心方块
   static const logoMono = 'assets/images/logo/logo_mono.png';
-  static const allDynamics = 'assets/images/all_dynamics.webp';
+  static const allDynamics = 'assets/images/all_dynamics.png';
   static const logoIco = 'assets/images/logo/ico/app_icon.ico';
   static const logoLarge = 'assets/images/logo/desktop/logo_large.png';
 
   static const vipIcon = 'assets/images/big-vip.svg';
-  static const avatarPlaceHolder = 'assets/images/noface.jpeg';
+  static const avatarPlaceHolder = r'assets/images/noface.jpeg';
   static const loading = 'assets/images/loading.png';
   static const buffering = 'assets/images/loading.webp';
   static const topicHeader = 'assets/images/topic-header-bg.png';
@@ -23,20 +23,20 @@ abstract final class Assets {
   static const livingRect = 'assets/images/live/live.gif';
   static const livingBackground = 'assets/images/live/default_bg.webp';
 
-  static const thunder1 = 'assets/images/paycoins/ic_thunder_1.png';
-  static const thunder2 = 'assets/images/paycoins/ic_thunder_2.png';
-  static const thunder3 = 'assets/images/paycoins/ic_thunder_3.png';
-  static const notEnough = 'assets/images/paycoins/ic_22_not_enough_pay.png';
-  static const mario = 'assets/images/paycoins/ic_22_mario.png';
-  static const gunSister = 'assets/images/paycoins/ic_22_gun_sister.png';
-  static const payBox = 'assets/images/paycoins/ic_pay_coins_box.png';
-  static const coinsOne = 'assets/images/paycoins/ic_coins_one.png';
-  static const coinsTwo = 'assets/images/paycoins/ic_coins_two.png';
-  static const left = 'assets/images/paycoins/ic_left.png';
-  static const leftDisable = 'assets/images/paycoins/ic_left_disable.png';
-  static const right = 'assets/images/paycoins/ic_right.png';
-  static const rightDisable = 'assets/images/paycoins/ic_right_disable.png';
-  static const panelClose = 'assets/images/paycoins/ic_panel_close.png';
+  static const thunder1 = r'assets/images/paycoins/ic_thunder_1.png';
+  static const thunder2 = r'assets/images/paycoins/ic_thunder_2.png';
+  static const thunder3 = r'assets/images/paycoins/ic_thunder_3.png';
+  static const notEnough = r'assets/images/paycoins/ic_22_not_enough_pay.png';
+  static const mario = r'assets/images/paycoins/ic_22_mario.png';
+  static const gunSister = r'assets/images/paycoins/ic_22_gun_sister.png';
+  static const payBox = r'assets/images/paycoins/ic_pay_coins_box.png';
+  static const coinsOne = r'assets/images/paycoins/ic_coins_one.png';
+  static const coinsTwo = r'assets/images/paycoins/ic_coins_two.png';
+  static const left = r'assets/images/paycoins/ic_left.png';
+  static const leftDisable = r'assets/images/paycoins/ic_left_disable.png';
+  static const right = r'assets/images/paycoins/ic_right.png';
+  static const rightDisable = r'assets/images/paycoins/ic_right_disable.png';
+  static const panelClose = r'assets/images/paycoins/ic_panel_close.png';
 
   static const List<String> mpvAnime4KShaders = [
     'Anime4K_Clamp_Highlights.glsl',

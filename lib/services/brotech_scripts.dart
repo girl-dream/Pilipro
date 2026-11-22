@@ -10,7 +10,7 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:hive_ce/hive.dart';
 import 'package:path/path.dart' as path;
 
-/// 哥哥科技 router scripts, fetched from ScriptCat and kept on disk. Nothing
+/// router scripts, fetched from ScriptCat and kept on disk. Nothing
 /// here runs until a launch slot or the router page asks for it.
 abstract final class BroTechScripts {
   static const list = <({String name, int id})>[
